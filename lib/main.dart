@@ -14,6 +14,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'BMI Calculator',
       theme: ThemeData(
         primarySwatch: Colors.blue,
@@ -47,11 +48,15 @@ class _CalculatorPageState extends State<CalculatorPage> {
                 showDialog(
                     context: context,
                     builder: (context) => AboutDialog(
-                      applicationIcon: Icon(Icons.calculate),
-                      applicationName: 'BMI Calculator',
-                      applicationVersion: '1.0.0',
-                      children: [Text(" Thislutter project is made by Ferdous Parvez"), Text("01843861974")],
-                    ));
+                          applicationIcon: Icon(Icons.calculate),
+                          applicationName: 'BMI Calculator',
+                          applicationVersion: '1.0.0',
+                          children: [
+                            Text(
+                                " This flutter BMI calculator is made by Ferdous Parvez"),
+                            Text("01843861974")
+                          ],
+                        ));
               },
               icon: Icon(Icons.copyright))
         ],
@@ -137,6 +142,9 @@ class _CalculatorPageState extends State<CalculatorPage> {
                                         "Your BMI is: $result",
                                         style: TextStyle(fontSize: 20),
                                       ),
+                                      SizedBox(height: 10),
+                                      Text(
+                                          "Info:\n Underweight = <18.5,\n Normal weight = 18.5–24.9,\n Overweight = 25–29.9,\n Obesity = BMI of 30 or greater")
                                     ],
                                   ),
                                   color: Colors.red,
